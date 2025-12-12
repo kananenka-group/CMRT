@@ -1,0 +1,19 @@
+3                                !! iflow
+100                               !! iproc
+100                               !! iparallel
+2                               !! iwait
+3                                !! nsite
+0                               !! t2(s)
+0.5d-12                         !! t1_max(ps)
+0.5d-12                         !! t3_max(ps)
+10                               !! nst_write
+0.5d-15                           !! dt (fs)
+0.5d-15                           !! dt_t1 (fs)
+1d-12                        !! tim_tot (ps)
+
+### Hamil_s (cm-1)
+505      -94.8    5.5  
+-94.8    425      29.8 
+5.5      29.8     195 
+
+x
