@@ -1,0 +1,21 @@
+The files it contain:
+
+module: mod_spectra_cmrt.f90 
+input file: spectra_cmrt.inp (has all the parameters except bath parameters which can be found in subroutine 'setup_parameters' in the code)
+makefile, run, submit.qs
+
+how to read the code: search for 'setup' and and then 'main' subroutine in the code.
+
+
+Running instructions:
+
+1. Set iflow to 2 in spectra_cmrt.inp
+2. Issue ./run
+3. Once jobs finish, files response.out, se.out, gsb.out and esa.out are created in each folder (the number of folders will be ipara you give in the input file). (file 'response.out' contains the overall response (rephasing and non rephasing (real and imaginary)) as a function of t1 (col 1) and t3 (col 2) . 
+4. set iflow to 3 and issue ./run. This will combine all the 'response.out', 'se.out', 'gsb.out' and 'esa.out' into the working folder. 
+5. Copy response.out to  fourier_trans folder
+6. cd to fourier_trans folder
+7. Compile (with make) and run ./aout
+8. This will genarate the 2D spectra in the file spectra.out. column 1: w1, 2: w2, 3: spectra (arbitrary units)
+9. one can also generate rephasing and non rephasing spectras by changing rep/nonrep in the subroutine 'fft_2d'
+10. One can also generate se, gsb or esa spectras by changing the input file name in the 'main' subroutine
